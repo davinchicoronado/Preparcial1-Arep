@@ -5,7 +5,12 @@ import edu.eci.arsw.exams.moneylaunderingapi.model.SuspectAccount;
 import java.util.List;
 
 public interface MoneyLaunderingService {
-    void updateAccountStatus(SuspectAccount suspectAccount);
-    SuspectAccount getAccountStatus(String accountId);
-    List<SuspectAccount> getSuspectAccounts();
+    
+    public void saveAccountStatus(SuspectAccount suspectAccount) throws MoneyLaunderingException;
+    
+    public SuspectAccount getAccountStatus(String accountId) throws MoneyLaunderingException;
+    
+    public List<SuspectAccount> getSuspectAccounts() throws MoneyLaunderingException;
+    
+    public void addAmountOfSmallTransactions(String accountId) throws MoneyLaunderingException;
 }

@@ -26,7 +26,7 @@ public class TransactionAnalyzer {
             }
             else
             {
-                smallTransactionsPerAccount.put(destinationAccount, smallTransactionsPerAccount.get(destinationAccount) + 1);
+                smallTransactionsPerAccount.put(destinationAccount, (smallTransactionsPerAccount.get(destinationAccount) + 1));
             }
             if(smallTransactionsPerAccount.get(destinationAccount) > LAUNDERING_LIMIT_COUNT)
                 AccountReporter.report(destinationAccount, smallTransactionsPerAccount.get(destinationAccount));
