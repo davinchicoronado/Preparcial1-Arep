@@ -20,7 +20,7 @@ public class MoneyLaundering
     private AtomicInteger amountOfFilesProcessed;
     private List<ThreadAnalizer> hilos;
     private MonitorController controlador;
-    
+    private final int numOfThreads = 5;
 
     public MoneyLaundering()
     {
@@ -37,7 +37,7 @@ public class MoneyLaundering
         amountOfFilesProcessed.set(0);
         List<File> transactionFiles = getTransactionFileList();
         amountOfFilesTotal = transactionFiles.size();
-        createThreads(22);
+        createThreads(numOfThreads);
         for(ThreadAnalizer h:hilos){
             h.setTransactionFiles(transactionFiles);
         }
